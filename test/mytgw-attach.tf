@@ -8,7 +8,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "mytgw-attach" {
     aws_subnet.myprivsubnet[count.index].id,
   ]
   tags = {
-    "Name" = "TGW-att-to-VPC-192-168"
+    "Name" = format("TGW-att-to-VPC-10-%s", count.index + 1)
   }
   transit_gateway_default_route_table_association = true
   transit_gateway_default_route_table_propagation = true
