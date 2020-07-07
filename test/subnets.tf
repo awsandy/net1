@@ -1,8 +1,8 @@
 resource "aws_subnet" "myprivsubnet" {
-  count=var.mycount
+  count                           = var.mycount
   assign_ipv6_address_on_creation = false
-  availability_zone               = "eu-west-1a"
-  cidr_block                      = format("10-%s-4-0", count.index + 1)
+  availability_zone               = "eu-west-3a"
+  cidr_block                      = format("10.%s.4.0/24", count.index + 1)
   map_public_ip_on_launch         = false
   tags = {
     "Name" = format("Priv subnet 10-%s-4-0", count.index + 1)
@@ -13,10 +13,10 @@ resource "aws_subnet" "myprivsubnet" {
 }
 
 resource "aws_subnet" "mypubsubnet" {
-  count=var.mycount
+  count                           = var.mycount
   assign_ipv6_address_on_creation = false
-  availability_zone               = "eu-west-1a"
-  cidr_block                      = format("10-%s-1-0", count.index + 1)
+  availability_zone               = "eu-west-3a"
+  cidr_block                      = format("10.%s.1.0/24", count.index + 1)
   map_public_ip_on_launch         = false
   tags = {
     "Name" = format("Pub subnet 10-%s-1-0", count.index + 1)
