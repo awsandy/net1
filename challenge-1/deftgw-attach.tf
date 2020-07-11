@@ -4,7 +4,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "deftgw-attach" {
   dns_support  = "enable"
   ipv6_support = "disable"
   subnet_ids = [
-    data.aws_subnet.defsubnet.id,
+    data.aws_instance.c9.subnet_id
   ]
   tags = {
     "Name" = "TGW-att-to-defvpc"

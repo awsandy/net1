@@ -1,5 +1,5 @@
 data "aws_instance" "c9" {
-filters {
+filter {
     name = "vpc-id"
     value = [data.aws_vpc.dvpc.id]
 }
