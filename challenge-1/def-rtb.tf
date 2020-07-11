@@ -5,5 +5,5 @@ data "aws_route_table" "defrt" {
     name = "association.main"
     values = [true]
   }
-
+  id = "rtb-9bb8b2f2"
 }
