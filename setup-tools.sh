@@ -19,8 +19,6 @@ sudo mv terraform /usr/local/bin/
 rm -f terraform_0.12.28_linux_amd64.zip
 
 
-
-
 echo "ssh key"
 mkdir -p ~/.ssh
 ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
