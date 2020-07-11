@@ -3,7 +3,7 @@ data "aws_route_table" "defrt" {
   vpc_id = data.aws_vpc.dvpc.id
   filter {
     name = "association.main"
-    values = "true"
+    values = [true]
   }
 
 }
