@@ -3,9 +3,10 @@
 resource "aws_security_group_rule" "mysgingress-icmp" {
   count = var.mycount
   cidr_blocks = [
+    "10.0.0.0/16",
     for avpc in var.aws_vpc :
-    lookup(var.aws_cidr, avpc),
-    "10.0.0.0/16","172.31.0.0/16"
+    lookup(var.aws_cidr, avpc)
+    
   ]
   from_port         = -1
   ipv6_cidr_blocks  = []
