@@ -23,7 +23,7 @@ resource "aws_instance" "myinstance" {
   #user_data_base64 = "IyEvYmluL2Jhc2gKCnl1bSB1cGRhdGUgLXkKCmN1cmwgaHR0cHM6Ly9naXN0LmdpdGh1YnVzZXJjb250ZW50LmNvbS9BbnRvbmlvRmVpamFvVUsvZDg1MzNhNzFlNWVjZmYyOTcxZjY4NTlhN2JlNDI2ZGEvcmF3LzNkMDkzMDAwNGI5MzdmNmRkN2YyNzMwMjEyMTgzMjdiNzEyOWQ2MDkvYXdzLWVjMi11c2VyZGF0YS1sYW5kaW5nLXdlYnBhZ2Uuc2ggfCBiYXNoCgo="
   user_data = file("user_data.sh")
   volume_tags = {
-    "Name" = format("instance-10-%s-first", count.index + 1)
+    "Name" = format("instance-10-%s-4-first", count.index + 1)
   }
   vpc_security_group_ids = [
     aws_security_group.mysg[count.index].id,
