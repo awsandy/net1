@@ -4,8 +4,8 @@ rtbid=`aws ec2 describe-route-tables --filters "Name=vpc-id,Values=$vpcid" "Name
 sgid=`aws ec2 describe-instances --filters "Name=vpc-id,Values=$vpcid" --query "Reservations[].Instances[].SecurityGroups[].GroupId" | jq .[] | tr -d '"'`
 export TF_VAR_rtbid=$rtbid
 export TF_VAR_sgid=$sgid
-echo $TF_VAR_rtbid
-echo $TF_VAR_sgid
+echo "TF_VAR_rtbid=$TF_VAR_rtbid"
+echo "TF_VAR_sgid=$TF_VAR_sgid"
 
 tsubid==`aws ec2 describe-subnets --filters "Name=cidr-block,Values=10.1.4.0/24" --query "Subnets[].SubnetId" | jq .[] | tr -d '"'` 
 subid=`echo $tsubid | tr -d '='`
@@ -14,5 +14,6 @@ rtbid2=`aws ec2 describe-route-tables --filters "Name=association.subnet-id,Valu
 #echo $rtbid2
 export TF_VAR_rtbid_10_1=$rtbid2
 export TF_VAR_sgid_10_1=$sgid2
-echo $TF_VAR_rtbid_10_1
-echo $TF_VAR_sgid_10_1
+echo "TF_VAR_rtbid_10_1=$TF_VAR_rtbid_10_1"
+echo "TF_VAR_sgid_10_1=$TF_VAR_sgid_10_1"
+terraform plan -out tfplan
