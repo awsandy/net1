@@ -4,5 +4,5 @@ data "aws_route_table" "rtb-10-1" {
   #  values = [ data.aws_subnet.c9subnet.id ]
   ##  name = "association.subnet-id"
   #}
-  route_table_id=var.rtbid-10-1
+  route_table_id=var.rtbid_10_1
 }
