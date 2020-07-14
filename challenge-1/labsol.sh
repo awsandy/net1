@@ -16,7 +16,3 @@ export TF_VAR_rtbid_10_1=$rtbid2
 export TF_VAR_sgid_10_1=$sgid2
 echo $TF_VAR_rtbid_10_1
 echo $TF_VAR_sgid_10_1
-
-
-
-
