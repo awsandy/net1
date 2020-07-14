@@ -3,8 +3,7 @@
 resource "aws_security_group_rule" "mysgingress-80" {
   count = var.mycount
   cidr_blocks = [
-    for avpc in var.aws_vpc :
-    lookup(var.aws_cidr, avpc)
+    "10.0.0.0/8"
   ]
 
   from_port         = 80

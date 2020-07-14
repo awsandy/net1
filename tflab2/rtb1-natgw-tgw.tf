@@ -16,7 +16,7 @@ resource "aws_route_table" "rtb1-natgw-tgw" {
       vpc_peering_connection_id = ""
     },
     {
-      cidr_block                = "10.0.0.0/16"
+      cidr_block                = "10.0.0.0/8"
       egress_only_gateway_id    = ""
       gateway_id                = ""
       instance_id               = ""
