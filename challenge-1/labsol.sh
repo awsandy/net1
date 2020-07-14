@@ -17,4 +17,3 @@ export TF_VAR_sgid_10_1=$sgid2
 echo "TF_VAR_rtbid_10_1=$TF_VAR_rtbid_10_1"
 echo "TF_VAR_sgid_10_1=$TF_VAR_sgid_10_1"
 terraform plan -out tfplan
-terraform apply tfplan
