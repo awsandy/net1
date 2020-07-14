@@ -9,3 +9,4 @@ subid=`echo $tsubid | tr -d '='`
 echo $subid
 rtbid2=`aws ec2 describe-route-tables --filters "Name=association.subnet-id,Values=$subid" --query "RouteTables[0].RouteTableId" | tr -d '"'`
 echo $rtbid2
+xport TF_VAR_rtbid-10-1=$rtbid2
