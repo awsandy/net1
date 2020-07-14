@@ -10,4 +10,4 @@ subid=`echo $tsubid | tr -d '='`
 rtbid2=`aws ec2 describe-route-tables --filters "Name=association.subnet-id,Values=$subid" --query "RouteTables[0].RouteTableId" | tr -d '"'`
 
 export TF_VAR_rtbid-10-1=$rtbid2
-echo $F_VAR_rtbid-10-1
+echo $TF_VAR_rtbid-10-1
